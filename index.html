@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kesari Studio — Handcrafted Sikh Religious Articles</title>
+    <!-- Tailwind CSS for high-fidelity luxury architecture -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Palette extracted from Kesari Studio Carry Bag.jpg
+                        kesariCream: '#FDFBF0',   // Base luxury ivory-cream fabric tone
+                        kesariSaffron: '#D16035', // The dominant "KESARI" logo orange
+                        kesariRed: '#CF3324',      // The intricate corner motif red / accent lines
+                        kesariBrown: '#513227',    // The dark chocolate text color
+                        white: '#FFFFFF',
+                    },
+                    fontFamily: {
+                        serif: ['Didot', 'Bodoni MT', 'Cinzel', 'serif'],
+                        sans: ['Inter', 'SF Pro Display', 'Helvetica Neue', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #FDFBF0; color: #513227; overflow-x: hidden; }
+        .hero-gradient { background: linear-gradient(180deg, rgba(81,50,39,0.1) 0%, rgba(81,50,39,0.6) 100%); }
+        img { transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+
+        /* Infinite Horizontal Scrolling Marquee Physics */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 35s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+        /* Faster velocity track for the smaller card format */
+        .marquee-track-fast {
+            display: flex;
+            width: max-content;
+            animation: marquee 28s linear infinite;
+        }
+        .marquee-track-fast:hover { animation-play-state: paused; }
+    </style>
+</head>
+<body id="top" class="font-sans antialiased">
+
+    <!-- NAVIGATION SYSTEM -->
+    <nav class="fixed top-0 w-full z-40 bg-kesariCream/90 backdrop-blur-md border-b border-kesariSaffron/10 px-6 md:px-12 py-5 flex justify-between items-center shadow-sm">
+        <div class="text-[10px] tracking-[0.4em] uppercase font-bold text-kesariBrown/60 hidden md:block">New Delhi · Est. 2026</div>
+        
+        <a href="#top" class="font-serif text-2xl md:text-3xl tracking-[0.2em] uppercase font-bold text-kesariSaffron hover:opacity-80 transition duration-300">
+            Kesari Studio
+        </a>
+        
+        <div class="flex gap-6 md:gap-8 text-[11px] tracking-widest uppercase font-semibold text-kesariBrown/90">
+            <a href="#gurudwara-sevas" class="hover:text-kesariRed transition">Gurudwara Sevas</a>
+            <a href="#home-collection" class="hover:text-kesariRed transition">Home Collection</a>
+            <a href="#artifacts" class="hover:text-kesariRed transition">Artifacts</a>
+            <!-- <button onclick="toggleDashboard()" class="bg-kesariRed text-white px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase hover:bg-kesariBrown transition shadow-sm font-bold">Studio Admin</button> -->
+	    <a href="#studio-contact" class="bg-kesariBrown text-kesariCream px-4 py-1.5 rounded-full text-[10px] tracking-widest uppercase hover:bg-kesariRed hover:text-white transition shadow-sm font-bold">Contact Us</a>
+        </div>
+    </nav>
+
+    <!-- MAIN WEBSITE WORKFLOW -->
+    <main class="pt-24">
+        
+        <!-- HERO EXHIBITION -->
+        <section class="relative h-[92vh] bg-kesariBrown flex items-end p-8 md:p-24 overflow-hidden">
+            <img id="view-hero-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1600&q=80" alt="Sikh Sacred Artistry" class="absolute inset-0 w-full h-full object-cover opacity-45">
+            <div class="absolute inset-0 hero-gradient"></div>
+            <div class="relative z-10 max-w-4xl text-kesariCream">
+                <p class="text-xs uppercase tracking-[0.4em] text-kesariSaffron mb-4 font-bold">Specialists in Sacred Heritage</p>
+                <h1 id="view-hero-title" class="font-serif text-4xl md:text-7xl font-light tracking-wide leading-tight mb-8">Chandoa Sahib & Rumala Sahib Sets crafted with absolute devotion.</h1>
+                <a href="#gurudwara-sevas" class="inline-block border-b-2 border-kesariSaffron pb-2 text-xs tracking-[0.3em] uppercase text-white hover:text-kesariSaffron hover:border-kesariCream transition font-bold">Explore Masterpieces</a>
+            </div>
+        </section>
+
+        <!-- CREDENTIAL STATEMENT -->
+        <section class="py-24 px-6 max-w-5xl mx-auto text-center relative z-20 bg-white shadow-xl rounded-xl mt-[-8vh]">
+            <p class="text-[11px] uppercase tracking-[0.4em] text-kesariRed font-bold mb-4">Honoring Historic Protocol</p>
+            <p class="font-serif text-xl md:text-2xl font-light italic leading-relaxed text-kesariBrown max-w-4xl mx-auto">
+                "Hand embroidered Rumala Sahib, Chandoa Sahib, and Sukhasan Roomal Sets created for Historical & Local Gurudwara Sahibs in Delhi, India, and around the world."
+            </p>
+            <div class="w-16 h-[2px] bg-kesariRed mx-auto mt-6"></div>
+        </section>
+
+        <!-- FIRST SECTION: GURUDWARA SEVAS (INFINITE HORIZONTAL SCROLL) -->
+        <section id="gurudwara-sevas" class="py-24 bg-white overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 mb-12 flex items-center gap-6">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-kesariRed mb-2 font-bold font-sans">Primary Exhibition</p>
+                    <h2 class="font-serif text-3xl md:text-4xl text-kesariBrown font-medium">Gurudwara Sevas</h2>
+                </div>
+                <div class="flex-grow h-[1px] bg-kesariSaffron/20"></div>
+            </div>
+
+            <!-- Marquee Container -->
+            <div class="w-full overflow-hidden relative">
+                <div class="marquee-track gap-8 px-4">
+                    <!-- 10 Unique Product Panels (Duplicated in DOM via loop block for seamless infinite architecture) -->
+                    <!-- Panel 1 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g1-img" src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G1">
+                        </div>
+                        <p id="view-g1-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Chandoa Sahib Sanctuary Set</p>
+                    </div>
+                    <!-- Panel 2 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g2-img" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G2">
+                        </div>
+                        <p id="view-g2-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Full Velvet Darbar Setup</p>
+                    </div>
+                    <!-- Panel 3 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g3-img" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G3">
+                        </div>
+                        <p id="view-g3-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Golden Brocade Weave</p>
+                    </div>
+                    <!-- Panel 4 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g4-img" src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G4">
+                        </div>
+                        <p id="view-g4-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Royal Zardozi Craftsmanship</p>
+                    </div>
+                    <!-- Panel 5 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g5-img" src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G5">
+                        </div>
+                        <p id="view-g5-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Palki Sahib Heritage Drapery</p>
+                    </div>
+                    <!-- Panel 6 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g6-img" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G6">
+                        </div>
+                        <p id="view-g6-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Intricate Silk Gota Work</p>
+                    </div>
+                    <!-- Panel 7 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g7-img" src="https://images.unsplash.com/photo-1576016770956-debb63d90029?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G7">
+                        </div>
+                        <p id="view-g7-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Classic Kesari Floral Tones</p>
+                    </div>
+                    <!-- Panel 8 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g8-img" src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G8">
+                        </div>
+                        <p id="view-g8-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Traditional Sarbloh Accents</p>
+                    </div>
+                    <!-- Panel 9 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g9-img" src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G9">
+                        </div>
+                        <p id="view-g9-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Premium Khalsa Blue Satin</p>
+                    </div>
+                    <!-- Panel 10 -->
+                    <div class="w-[320px] shrink-0 space-y-3">
+                        <div class="aspect-[4/5] bg-kesariCream rounded border border-kesariSaffron/15 overflow-hidden">
+                            <img id="view-g10-img" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover" alt="G10">
+                        </div>
+                        <p id="view-g10-cap" class="font-serif text-md text-kesariSaffron font-medium px-1">Sukhasan Roomal Legacy Set</p>
+                    </div>
+
+                    <!-- CLONED LOOP (Enables Infinite Scroll Mechanics) -->
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Chandoa Sahib Sanctuary Set</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Full Velvet Darbar Setup</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Golden Brocade Weave</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Royal Zardozi Craftsmanship</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1561214115-f2f134cc4912?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Palki Sahib Heritage Drapery</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Intricate Silk Gota Work</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1576016770956-debb63d90029?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Classic Kesari Floral Tones</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1515405295579-ba7b45403062?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Traditional Sarbloh Accents</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Premium Khalsa Blue Satin</p></div>
+                    <div class="w-[320px] shrink-0 space-y-3"><div class="aspect-[4/5] bg-kesariCream rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=600&q=80" class="w-full h-full object-cover"></div><p class="font-serif text-md text-kesariSaffron font-medium px-1">Sukhasan Roomal Legacy Set</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECOND SECTION: HOME RUMALAS (INFINITE HALF-SIZE SCROLL) -->
+        <section id="home-collection" class="py-20 bg-kesariCream/40 border-t border-kesariSaffron/10 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-6 mb-12 flex items-center gap-6">
+                <div>
+                    <p class="text-xs uppercase tracking-[0.3em] text-kesariRed mb-2 font-bold font-sans">Intimate Devotion</p>
+                    <h2 class="font-serif text-3xl md:text-4xl text-kesariBrown font-medium">Home Rumala Sahib Collection</h2>
+                </div>
+                <div class="flex-grow h-[1px] bg-kesariSaffron/20"></div>
+            </div>
+
+            <!-- Marquee Container (Half Size Images) -->
+            <div class="w-full overflow-hidden relative">
+                <div class="marquee-track-fast gap-6 px-4">
+                    <!-- 10 Half-Size Panels -->
+                    <!-- Panel 1 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h1-img" src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H1">
+                        </div>
+                        <p id="view-h1-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Pure Silk Home Prakash</p>
+                    </div>
+                    <!-- Panel 2 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h2-img" src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H2">
+                        </div>
+                        <p id="view-h2-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Hand-Spun Khadi Weave</p>
+                    </div>
+                    <!-- Panel 3 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h3-img" src="https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H3">
+                        </div>
+                        <p id="view-h3-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Crimson Silk Threading</p>
+                    </div>
+                    <!-- Panel 4 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h4-img" src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H4">
+                        </div>
+                        <p id="view-h4-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Minimalist Ivory Outline</p>
+                    </div>
+                    <!-- Panel 5 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h5-img" src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H5">
+                        </div>
+                        <p id="view-h5-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Saffron Borders Border</p>
+                    </div>
+                    <!-- Panel 6 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h6-img" src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H6">
+                        </div>
+                        <p id="view-h6-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Fine Brocade Hand drapes</p>
+                    </div>
+                    <!-- Panel 7 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h7-img" src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H7">
+                        </div>
+                        <p id="view-h7-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Nanakshahi Coin Motif</p>
+                    </div>
+                    <!-- Panel 8 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h8-img" src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H8">
+                        </div>
+                        <p id="view-h8-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Tassar Silk Classic</p>
+                    </div>
+                    <!-- Panel 9 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h9-img" src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H9">
+                        </div>
+                        <p id="view-h9-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Symmetric Floral Borders</p>
+                    </div>
+                    <!-- Panel 10 -->
+                    <div class="w-[180px] shrink-0 space-y-2">
+                        <div class="aspect-[4/5] bg-white rounded border border-kesariSaffron/10 overflow-hidden">
+                            <img id="view-h10-img" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover" alt="H10">
+                        </div>
+                        <p id="view-h10-cap" class="text-xs font-medium text-kesariBrown/80 tracking-wide px-1">Heritage Sukhasan Velvet</p>
+                    </div>
+
+                    <!-- CLONED LOOP (Enables Infinite Scroll Mechanics) -->
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Pure Silk Home Prakash</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1615485290382-441e4d049cb5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Hand-Spun Khadi Weave</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1617806118233-18e1db207f62?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Crimson Silk Threading</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Minimalist Ivory Outline</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Saffron Borders Border</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Fine Brocade Hand drapes</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Nanakshahi Coin Motif</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Tassar Silk Classic</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Symmetric Floral Borders</p></div>
+                    <div class="w-[180px] shrink-0 space-y-2"><div class="aspect-[4/5] bg-white rounded overflow-hidden"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=400&q=80" class="w-full h-full object-cover"></div><p class="text-xs font-medium text-kesariBrown/80 px-1">Heritage Sukhasan Velvet</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- THIRD SECTION: THE KAKAARS & ACCENTS (EXPANDED TO ELEGANT 8-ITEM GRID) -->
+        <section id="artifacts" class="py-28 px-6 md:px-16 bg-white border-t border-kesariSaffron/15">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-20 text-center">
+                    <p class="text-xs uppercase tracking-[0.3em] text-kesariRed mb-3 font-bold">The Kakaars & Sanctuary Accents</p>
+                    <h2 class="font-serif text-4xl tracking-wide text-kesariBrown font-medium">Sacred Artifacts & Hardware Art</h2>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <!-- Item 1 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec1-img" src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Personal Kirpan">
+                        </div>
+                        <h4 id="view-sec1-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Personal Kirpan</h4>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec2-img" src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Ceremonial Kirpan">
+                        </div>
+                        <h4 id="view-sec2-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Ceremonial Kirpan</h4>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec3-img" src="https://images.unsplash.com/photo-1505691938895-1758d7feb511?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Handcrafted Kara">
+                        </div>
+                        <h4 id="view-sec3-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Handcrafted Kara</h4>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec4-img" src="https://images.unsplash.com/photo-1606744824163-985d376605aa?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Sheesham Kanga">
+                        </div>
+                        <h4 id="view-sec4-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Sheesham Kanga</h4>
+                    </div>
+
+                    <!-- Item 5 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec5-img" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Chawar Sahib">
+                        </div>
+                        <h4 id="view-sec5-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Chawar Sahib</h4>
+                    </div>
+
+                    <!-- Item 6 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec6-img" src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Chhaba Artistry">
+                        </div>
+                        <h4 id="view-sec6-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Chhaba Artistry</h4>
+                    </div>
+
+                    <!-- Item 7 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec7-img" src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Dashboard Frames">
+                        </div>
+                        <h4 id="view-sec7-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Dashboard Frames</h4>
+                    </div>
+
+                    <!-- Item 8 -->
+                    <div class="text-center space-y-4 group">
+                        <div class="aspect-square bg-kesariCream p-4 flex items-center justify-center overflow-hidden rounded shadow border border-kesariSaffron/10">
+                            <img id="view-sec8-img" src="https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=400&q=80" class="object-cover h-full w-full group-hover:scale-105 transition duration-500" alt="Gurbani Wall Frames">
+                        </div>
+                        <h4 id="view-sec8-title" class="font-serif text-lg tracking-wide text-kesariSaffron font-medium group-hover:text-kesariRed transition">Sanctuary Wall Frames</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+   <!-- FLAGSHIP STUDIO FOOTER -->
+<footer id="studio-contact" class="bg-kesariBrown text-kesariCream/60 py-20 px-6 md:px-16 border-t-2 border-kesariRed/20">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+        
+        <!-- Left Side: Editorial Address Credentials -->
+        <div class="space-y-6 text-center md:text-left">
+            <p class="text-kesariSaffron font-serif text-3xl tracking-[10px] font-bold">KESARI STUDIO</p>
+            <div class="space-y-2 text-kesariCream/80 font-medium tracking-wide normal-case text-sm">
+                <p class="font-serif text-base text-kesariSaffron tracking-wide">Flagship Atelier Location:</p>
+                <p>33, Bhagat Singh Market, Gole Market,</p>
+                <p>Connaught Place, New Delhi - 110001, India</p>
+                <p class="pt-4 font-mono text-xs tracking-widest text-kesariCream/50">Inquiries: +91 9220442713 · +91 9810813332</p>
+            </div>
+            <div class="pt-2">
+                <a href="https://share.google/a8EiO3DFPv3buVuHT" target="_blank" class="inline-block text-[10px] tracking-widest uppercase bg-kesariSaffron/20 border border-kesariSaffron text-kesariSaffron px-4 py-2 rounded hover:bg-kesariSaffron hover:text-kesariBrown transition font-bold">
+                    Open in Google Maps ↗
+                </a>
+            </div>
+        </div>
+
+        <!-- Right Side: Luxury Embedded Interactive Map Architecture -->
+        <div class="w-full h-72 md:h-80 rounded-lg overflow-hidden shadow-2xl border border-kesariCream/10 relative group transition-all duration-500">
+            <!-- Luxury Map Canvas Wrapper -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.977461623877!2d77.2066804!3d28.6304381!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd5b0606b0d9%3A0x6bde6be5eb07e601!2s33%2C%20Bhagat%20Singh%20Market%2C%20Gole%20Market%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1719500000000!5m2!1sen!2sin" 
+                class="w-full h-full border-0 grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 transition duration-700" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+        </div>
+
+    </div>
+
+    <!-- Footnote Copyright Signoff -->
+    <div class="text-center text-[10px] text-kesariCream/40 pt-12 mt-12 border-t border-kesariCream/10 max-w-xs mx-auto">
+        © 2026 Kesari Studio. Built with Devotion.
+    </div>
+</footer>
+
+   <!-- <!-- ========================================== -->
+    <!-- MANAGEMENT DASHBOARD (ADMIN DRAWER)       -->
+    <!-- ========================================== -->
+    <div id="admin-dashboard" class="fixed top-0 right-0 h-full w-full md:w-[480px] bg-white shadow-2xl z-50 transform translate-x-full transition-transform duration-500 overflow-y-auto border-l border-kesariRed/10">
+        <div class="p-6 border-b border-kesariBrown/10 flex justify-between items-center sticky top-0 bg-white z-10">
+            <div>
+                <h3 class="font-serif text-xl font-bold text-kesariSaffron">Curation Studio</h3>
+                <p class="text-xs text-kesariBrown/60">Update live assets instantly.</p>
+            </div>
+            <button onclick="toggleDashboard()" class="text-xs uppercase tracking-widest font-bold bg-kesariCream text-kesariRed px-3 py-2 border border-kesariRed/20 rounded hover:bg-kesariRed hover:text-white transition">✕ Close</button>
+        </div> -->
+
+        <div class="p-6 space-y-6">
+            <!-- Instructions Panel -->
+            <div class="p-4 bg-kesariCream border border-kesariSaffron/20 text-xs text-kesariBrown/90 space-y-1.5 rounded">
+                <strong class="text-kesariSaffron font-bold">V1 Asset Pipeline:</strong>
+                <p>Modify paths below (e.g., <code class="bg-white px-1 font-mono text-[11px]">./images/pic.jpg</code>) and select <strong>"Export Static Code"</strong> to download production-ready code.</p>
+            </div>
+
+            <!-- PRIMARY IMAGE SYNCHRONIZERS -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase font-bold tracking-wider text-kesariSaffron border-b pb-1">Hero Asset Control</h4>
+                <input type="text" id="edit-hero-img" class="w-full border p-2 text-xs font-mono rounded" oninput="updateLiveView('hero-img')">
+                <textarea id="edit-hero-title" rows="2" class="w-full border p-2 text-xs rounded" oninput="updateLiveView('hero-title')"></textarea>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase font-bold tracking-wider text-kesariSaffron border-b pb-1">Marquee 1: Gurudwara Sevas (Sample IDs)</h4>
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" id="edit-g1-img" class="border p-1.5 text-[11px] font-mono rounded" placeholder="G1 Image Link" oninput="updateLiveView('g1-img')">
+                    <input type="text" id="edit-g1-cap" class="border p-1.5 text-[11px] rounded" placeholder="G1 Caption" oninput="updateLiveView('g1-cap')">
+                    <input type="text" id="edit-g2-img" class="border p-1.5 text-[11px] font-mono rounded" placeholder="G2 Image Link" oninput="updateLiveView('g2-img')">
+                    <input type="text" id="edit-g2-cap" class="border p-1.5 text-[11px] rounded" placeholder="G2 Caption" oninput="updateLiveView('g2-cap')">
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase font-bold tracking-wider text-kesariSaffron border-b pb-1">Marquee 2: Home Collection (Sample IDs)</h4>
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" id="edit-h1-img" class="border p-1.5 text-[11px] font-mono rounded" placeholder="H1 Image Link" oninput="updateLiveView('h1-img')">
+                    <input type="text" id="edit-h1-cap" class="border p-1.5 text-[11px] rounded" placeholder="H1 Caption" oninput="updateLiveView('h1-cap')">
+                </div>
+            </div>
+
+            <!-- EXPORT MODULE -->
+            <div class="pt-4 border-t border-kesariBrown/10 space-y-3">
+                <button onclick="generateCleanHTML()" class="w-full bg-kesariRed text-white text-xs tracking-widest uppercase py-3 font-bold hover:bg-kesariBrown transition rounded">Export Static Code</button>
+                <textarea id="output-html" rows="4" class="w-full border p-2 text-[10px] font-mono rounded hidden bg-zinc-50" readonly></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- ENGINE CONTROL SYSTEM -->
+    <script>
+        function toggleDashboard() {
+            document.getElementById('admin-dashboard').classList.toggle('translate-x-full');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const targetIds = ['hero-img', 'hero-title', 'g1-img', 'g1-cap', 'g2-img', 'g2-cap', 'g3-img', 'g3-cap', 'g4-img', 'g4-cap', 'g5-img', 'g5-cap', 'g6-img', 'g6-cap', 'g7-img', 'g7-cap', 'g8-img', 'g8-cap', 'g9-img', 'g9-cap', 'g10-img', 'g10-cap', 'h1-img', 'h1-cap', 'h2-img', 'h2-cap', 'h3-img', 'h3-cap', 'h4-img', 'h4-cap', 'h5-img', 'h5-cap', 'h6-img', 'h6-cap', 'h7-img', 'h7-cap', 'h8-img', 'h8-cap', 'h9-img', 'h9-cap', 'h10-img', 'h10-cap', 'sec1-img', 'sec1-title', 'sec2-img', 'sec2-title', 'sec3-img', 'sec3-title', 'sec4-img', 'sec4-title', 'sec5-img', 'sec5-title', 'sec6-img', 'sec6-title', 'sec7-img', 'sec7-title', 'sec8-img', 'sec8-title'];
+            
+            targetIds.forEach(id => {
+                const viewerElement = document.getElementById(`view-${id}`);
+                const editorElement = document.getElementById(`edit-${id}`);
+                if(viewerElement && editorElement) {
+                    editorElement.value = (viewerElement.tagName === 'IMG') ? viewerElement.src : viewerElement.innerText.trim();
+                }
+            });
+        });
+
+        function updateLiveView(key) {
+            const viewer = document.getElementById(`view-${key}`);
+            const editor = document.getElementById(`edit-${key}`);
+            if (viewer && editor) {
+                if (viewer.tagName === 'IMG') { viewer.src = editor.value; }
+                else { viewer.innerText = editor.value; }
+            }
+        }
+
+        function generateCleanHTML() {
+            const staticImgIds = ['hero-img', 'g1-img', 'g2-img', 'g3-img', 'g4-img', 'g5-img', 'g6-img', 'g7-img', 'g8-img', 'g9-img', 'g10-img', 'h1-img', 'h2-img', 'h3-img', 'h4-img', 'h5-img', 'h6-img', 'h7-img', 'h8-img', 'h9-img', 'h10-img', 'sec1-img', 'sec2-img', 'sec3-img', 'sec4-img', 'sec5-img', 'sec6-img', 'sec7-img', 'sec8-img'];
+            staticImgIds.forEach(id => {
+                const viewEl = document.getElementById(`view-${id}`);
+                if(viewEl) viewEl.setAttribute('src', viewEl.src);
+            });
+
+            const outputTextArea = document.getElementById('output-html');
+            let documentSource = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+            documentSource = documentSource.replace("translate-x-full", "");
+            
+            outputTextArea.value = documentSource;
+            outputTextArea.classList.remove('hidden');
+            outputTextArea.select();
+            alert("Static production markup compiled successfully! Overwrite your index.html file inside GitHub to save changes.");
+        }
+    </script>
+</body>
+</html>
